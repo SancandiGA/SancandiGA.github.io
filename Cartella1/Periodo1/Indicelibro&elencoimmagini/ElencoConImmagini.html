@@ -4,15 +4,25 @@
 <title> Elenco img </title>
 <link rel="icon" type="image/x-icon" href="https://png.pngtree.com/element_our/sm/20180517/sm_5afd61ef4cbc7.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .elencoimg {
+    list-style-image: url('https://images.fineartamerica.com/images-medium-large-5/the-golden-rose-flower-jennie-marie-schell.jpg');
+    list-style-position: inside; /* Opzionale: posiziona l'immagine all'interno del bordo dell'elemento li */
+    list-style: none; /* Rimuove i marcatori predefiniti */
+    padding-left: 30px; /* Aggiunge spazio a sinistra per l'immagine */
+    background-repeat: no-repeat; /* Imposta l'immagine di sfondo per non ripetersi */
+    background-size: 20px 20px; /* Ridimensiona l'immagine di sfondo */
+  }
+</style>
 </head>
 <body>
   <h1> Esempio di elenco con immagini </h1>
-  <ul style="list-style-image: url('https://images.fineartamerica.com/images-medium-large-5/the-golden-rose-flower-jennie-marie-schell.jpg')">
-  <li>Punto 1</li>
-  <li>Punto 2</li>
-  <li>Punto 3</li>
-</ul>
-<br> <br>
-<a href="IndiceLibro&ElencoConImmagini.html"> Pagina precedente</a>
+  <ul class="elencoimg">
+    <li>Punto 1</li>
+    <li>Punto 2</li>
+    <li>Punto 3</li>
+  </ul>
+  <br> <br>
+  <a href="IndiceLibro&ElencoConImmagini.html"> Pagina precedente</a>
 </body>
 </html>
