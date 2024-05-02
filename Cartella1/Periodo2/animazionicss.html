@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+   .transition {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transition: width 4s ease-out 2s;
+    }
+
+   .transition:hover {
+      width: 200px;
+    }
+
+   .transform {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      transform: rotate(70deg);
+      transform-origin: 60% 80%;
+    }
+
+    @keyframes go-left-right {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100px);
+      }
+    }
+
+   .animation {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      animation: go-left-right 4s ease-out infinite;
+    }
+
+    #digit {
+      width:.5em;
+      overflow: hidden;
+      font: 32px monospace;
+      cursor: pointer;
+    }
+
+    #stripe {
+      display: inline-block
+    }
+
+    #stripe.animate {
+      transform: translate(-90%);
+      transition-property: transform;
+      transition-duration: 9s;
+      transition-timing-function: steps(9, start);
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Esempi di animazioni CSS </h1>
+  <p>Passa il mouse sopra il quadrato rosso per vedere una transizione:</p>
+  <div class="transition"></div>
+  <p>Vedi una trasformazione sul quadrato blu:</p>
+  <div class="transform"></div>
+  <p>Guarda un'animazione di fotogrammi chiave sul quadrato verde:</p>
+  <div class="animation"></div>
+  <p>Fare clic sulla cifra per vedere un'animazione di conteggio:</p>
+  <div id="digit"><div id="stripe">0123456789</div></div>
+  <script>
+    digit.onclick = function() {
+      stripe.classList.add('animate');
+    }
+  </script>
+  <a href="../Periodo2/Pentamestre.html"> Pagina precedente </a>
+</body>
+</html>
