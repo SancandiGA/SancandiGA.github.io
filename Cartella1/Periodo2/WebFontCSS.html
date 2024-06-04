@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web Fonts in CSS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Italiana">
+  <style>
+    body {
+      font-family: 'Italiana', serif;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>I Web Fonts in CSS</h1>
+  <p>Le web fonts sono un modo per utilizzare font personalizzati sul tuo sito web senza doverli installare sul computer dell'utente.</p>
+  <p>Per utilizzare una web font, devi prima caricarla sul tuo sito web utilizzando il tag <code>&lt;link&gt;</code> o il tag <code>&lt;style&gt;</code>. Ad esempio:</p>
+  <code>
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"&gt;
+  </code>
+  <p>Quindi, puoi utilizzare la web font nel tuo CSS utilizzando la proprietà <code>font-family</code>:</p>
+  <code>
+    body {
+      font-family: 'Tangerine', serif;
+      font-size: 48px;
+    }
+  </code>
+  <h2>Utilizzo di Google Fonts</h2>
+  <p>Google Fonts è un servizio gratuito che offre una vasta gamma di web fonts. Puoi utilizzare Google Fonts aggiungendo un link al tuo file CSS:</p>
+  <code>
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"&gt;
+  </code>
+  <p>Oppure, puoi utilizzare la proprietà <code>@import</code> nel tuo file CSS:</p>
+  <code>
+    @import url('https://fonts.googleapis.com/css?family=Tangerine');
+  </code>
+  <h2>Stili e pesi</h2>
+  <p>Le web fonts possono avere diversi stili e pesi. Ad esempio, la font Tangerine ha uno stile normale e uno stile corsivo:</p>
+  <code>
+    https://fonts.googleapis.com/css?family=Tangerine:normal,italic
+  </code>
+  <p>Oppure, puoi utilizzare la proprietà <code>font-weight</code> per specificare il peso della font:</p>
+  <code>
+    body {
+      font-family: 'Tangerine', serif;
+      font-weight: bold;
+    }
+  </code>
+</body>
+</html>
