@@ -6,6 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+    <script>
+        function validateForm() {
+          var nome = document.getElementById("nome").value;
+          var cognome = document.getElementById("cognome").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+        
+          var nomeRegex = /^[a-zA-Z\s]{2,30}$/;
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        
+          if (!nomeRegex.test(nome)) {
+            alert("Nome non valido");
+            return false;
+          }
+        
+          if (!nomeRegex.test(cognome)) {
+            alert("Cognome non valido");
+            return false;
+          }
+        
+          if (!emailRegex.test(email)) {
+            alert("Email non valida");
+            return false;
+          }
+        
+          if (!passwordRegex.test(password)) {
+            alert("Password non valida. Deve contenere almeno 8 caratteri, una maiuscola, una minuscola e un numero");
+            return false;
+          }
+        
+          printData(nome, cognome, email, password);
+          return true;
+        }
+        
+        function printData(nome, cognome, email, password) {
+          var output = "Nome: " + nome + "<br>";
+          output += "Cognome: " + cognome + "<br>";
+          output += "Email: " + email + "<br>";
+          output += "Password: " + "*".repeat(password.length);
+        
+          document.getElementById("output").innerHTML = output;
+        }
+        <form onsubmit="return validateForm()">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" required><br>
+        
+          <label for="cognome">Cognome:</label>
+          <input type="text" id="cognome" required><br>
+        
+          <label for="email">Email:</label>
+          <input type="email" id="email" required><br>
+        
+          <label for="password">Password:</label>
+          <input type="password" id="password" required><br>
+        
+          <input type="submit" value="Invia">
+        </form>
+        
+        <div id="output"></div>
+    </script>
 </body>
 </html>
