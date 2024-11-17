@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modulo di Input</title>
+    <title>Form di Input</title>
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWSM58t3OoAgRqCh0QF8F1dXcOb3XxGLVt_g&s">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+const form = document.createElement("FORM");
+form.method = "post";
+form.action = "";
 
+const cognomeInput = document.createElement("INPUT");
+cognomeInput.type = "text";
+cognomeInput.placeholder = "Cognome";
+
+const nomeInput = document.createElement("INPUT");
+nomeInput.type = "text";
+nomeInput.placeholder = "Nome";
+
+const etaInput = document.createElement("INPUT");
+etaInput.type = "text";
+etaInput.placeholder = "Età";
+
+const indirizzoInput = document.createElement("INPUT");
+indirizzoInput.type = "text";
+indirizzoInput.placeholder = "Indirizzo";
+
+const cittaInput = document.createElement("INPUT");
+cittaInput.type = "text";
+cittaInput.placeholder = "Città";
+
+const capInput = document.createElement("INPUT");
+capInput.type = "text";
+capInput.placeholder = "CAP";
+
+const submitButton = document.createElement("INPUT");
+submitButton.type = "submit";
+submitButton.value = "Invia";
+
+form.appendChild(cognomeInput);
+form.appendChild(nomeInput);
+form.appendChild(etaInput);
+form.appendChild(indirizzoInput);
+form.appendChild(cittaInput);
+form.appendChild(capInput);
+form.appendChild(submitButton);
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const cognome = cognomeInput.value;
+  const nome = nomeInput.value;
+  const eta = etaInput.value;
+  const indirizzo = indirizzoInput.value;
+  const citta = cittaInput.value;
+  const cap = capInput.value;
+
+  document.getElementById("output").innerHTML = `
+    <p>Cognome: ${cognome}</p>
+    <p>Nome: ${nome}</p>
+    <p>Età: ${eta}</p>
+    <p>Indirizzo: ${indirizzo}</p>
+    <p>Città: ${citta}</p>
+    <p>CAP: ${cap}</p>
+  `;
+});
+
+document.body.appendChild(form);
+
+const outputDiv = document.createElement("DIV");
+outputDiv.id = "output";
+document.body.appendChild(outputDiv);
 </body>
 </html>
