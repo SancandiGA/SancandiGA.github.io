@@ -6,6 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+Here is a simple JavaScript script that allows a user to input personal data for multiple people and stores it in an array. The data is then printed to HTML.
 
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personal Data Collector</title>
+</head>
+<body>
+  <h1>Personal Data Collector</h1>
+  <form id="dataForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname"><br><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br><br>
+    <input type="button" value="Add Person" onclick="addPerson()">
+  </form>
+  <div id="personList"></div>
+
+  <script src="script.js">
+      let people = [];
+
+function addPerson() {
+  let name = document.getElementById("name").value;
+  let surname = document.getElementById("surname").value;
+  let age = document.getElementById("age").value;
+
+  if (name && surname && age) {
+    let person = {
+      name: name,
+      surname: surname,
+      age: age
+    };
+    people.push(person);
+    document.getElementById("name").value = "";
+    document.getElementById("surname").value = "";
+    document.getElementById("age").value = "";
+
+    printPeopleList();
+  } else {
+    alert("Please fill in all fields!");
+  }
+}
+
+function printPeopleList() {
+  let peopleList = document.getElementById("personList");
+  peopleList.innerHTML = "";
+  for (let i = 0; i < people.length; i++) {
+    peopleList.innerHTML += `Name: ${people[i].name}, Surname: ${people[i].surname}, Age: ${people[i].age}<br>`;
+  }
+}
+  </script>
 </body>
 </html>
+
