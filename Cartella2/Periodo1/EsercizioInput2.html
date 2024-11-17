@@ -4,6 +4,54 @@
     <title>Form di Input</title>
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWSM58t3OoAgRqCh0QF8F1dXcOb3XxGLVt_g&s">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e7f3fe;
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -73,6 +121,7 @@
         const outputDiv = document.createElement("DIV");
         outputDiv.id = "output";
         document.body.appendChild(outputDiv);
-        </script>
+    </script>
 </body>
 </html>
+
