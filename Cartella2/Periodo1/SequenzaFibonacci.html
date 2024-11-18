@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sequenza Fibonacci</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/3446/PNG/512/loading_arrow_cycle_icon_219178.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div id="sequenza-fibonacci"></div>
+</head>
+<body>
+    <a href="../Periodo1/Trimestre.html"> Clicca qui per tornare alla pagina precedente </a>
+    <script>
+        let SequenzaFibonacci = "";
+      let num1 = 0;
+      let num2 = 1;
 
+      do {
+        SequenzaFibonacci += num1 + " ";
+        let temp = num1 + num2;
+        num1 = num2;
+        num2 = temp;
+      } while (num1 <= 100);
+
+      document.getElementById("sequenza-fibonacci").innerHTML = SequenzaFibonacci;
+    </script>
+</body>
+</html>
