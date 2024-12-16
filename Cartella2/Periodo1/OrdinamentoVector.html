@@ -44,13 +44,15 @@
             let text = document.getElementById("numbers").value;
             const array = text.split(" ");
             document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
-            function decrescente() {
-                document.getElementById("array2").innerHTML = "Array decrescente: " + array.slice().sort(function(a, b) { return b - a; }).join(", ");
-            }
-            function crescente() {
-                document.getElementById("array1").innerHTML = "Array crescente: " + array.slice().sort(function(a, b) { return a - b; }).join(", ");
-            }        
         }
+        function decrescente() {
+            invio();
+            document.getElementById("array2").innerHTML = "Array decrescente: " + array.slice().sort(function(a, b) { return b - a; }).join(", ");
+        }
+        function crescente() {
+            invio();
+            document.getElementById("array1").innerHTML = "Array crescente: " + array.slice().sort(function(a, b) { return a - b; }).join(", ");
+        } 
     </script>
     <label for="numbers"> Inserisci i numeri separati da uno spazio: </label>
     <input type="text" id="numbers" name="numbers">
