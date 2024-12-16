@@ -12,11 +12,11 @@
   <body>
     <script>
       const array = [200, 100, 1, 30];
-      console.log(array);
+      document.getElementById("array").innerHTML = array;
       array.sort(function(a, b){return a-b});
-      console.log(array);
+      document.getElementById("array").innerHTML = array;
       array.sort(function(a, b){return b-a});
-      console.log(array);
+      document.getElementById("array").innerHTML = array;
     </script>
   </body>
 </html>
