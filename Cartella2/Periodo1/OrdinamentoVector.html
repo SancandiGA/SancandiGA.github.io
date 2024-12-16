@@ -12,9 +12,15 @@
     </style>
   </head>
   <body>
+    <table aling="center">
+      <tr> <button onclick="crescente()">Ordine crescente</button> </tr>
+      <tr> <button onclick="decrescente()">Ordine decrescente</button> </tr>
+    </table>
        <script>
         const array = [200, 100, 1, 30];
-        document.getElementById("array").innerHTML = array;
+        function array(){
+          document.getElementById("array").innerHTML = array;
+        }
         function decrescente(){
           document.getElementById("array2").innerHTML = array.sort(function(a, b){return b-a});
         }
@@ -22,7 +28,5 @@
           document.getElementById("array1").innerHTML = array.sort(function(a, b){return a-b});      
         }     
        </script>
-    <button onclick="crescente()">Ordine crescente</button>
-    <button onclick="decrescente()">Ordine decrescente</button>
-  </body>
+      </body>
 </html>
