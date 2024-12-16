@@ -5,6 +5,8 @@
     <link rel="icon" type="image/x-icon" href="https://static.thenounproject.com/png/17102-200.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div id= "array"> </div>
+    <div id= "array1"> </div>
+    <div id= "array2"> </div>
     <style>
       
     </style>
@@ -13,8 +15,8 @@
     <script>
       const array = [200, 100, 1, 30];
       document.getElementById("array").innerHTML = array;
-      document.getElementById("array").innerHTML = array.sort(function(a, b){return a-b});      
-      document.getElementById("array").innerHTML = array.sort(function(a, b){return b-a});      
+      document.getElementById("array1").innerHTML = array.sort(function(a, b){return a-b});      
+      document.getElementById("array2").innerHTML = array.sort(function(a, b){return b-a});      
           </script>
   </body>
 </html>
