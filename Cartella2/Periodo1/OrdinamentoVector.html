@@ -12,11 +12,17 @@
     </style>
   </head>
   <body>
-    <script>
-      const array = [200, 100, 1, 30];
-      document.getElementById("array").innerHTML = array;
-      document.getElementById("array1").innerHTML = array.sort(function(a, b){return a-b});      
-      document.getElementById("array2").innerHTML = array.sort(function(a, b){return b-a});      
-          </script>
+       <script>
+        const array = [200, 100, 1, 30];
+        document.getElementById("array").innerHTML = array;
+        function decrescente(){
+          document.getElementById("array2").innerHTML = array.sort(function(a, b){return b-a});
+        }
+        function crescente(){
+          document.getElementById("array1").innerHTML = array.sort(function(a, b){return a-b});      
+        }     
+       </script>
+    <button onclick="crescente()">Ordine crescente</button>
+    <button onclick="decrescente()">Ordine decrescente</button>
   </body>
 </html>
