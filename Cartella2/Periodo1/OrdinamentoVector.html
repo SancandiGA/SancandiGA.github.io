@@ -44,6 +44,7 @@
             let text = document.getElementById("numbers").value;
             const array = text.split(" ");
             document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
+            return array;
         }
         function decrescente() {
             arrayDecrescente = [...invio()];
