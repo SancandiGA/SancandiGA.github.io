@@ -13,10 +13,8 @@
     <script>
       const array = [200, 100, 1, 30];
       document.getElementById("array").innerHTML = array;
-      array.sort(function(a, b){return a-b});
-      document.getElementById("array").innerHTML = array;
-      array.sort(function(a, b){return b-a});
-      document.getElementById("array").innerHTML = array;
-    </script>
+      document.getElementById("array").innerHTML = array.sort(function(a, b){return a-b});      
+      document.getElementById("array").innerHTML = array.sort(function(a, b){return b-a});      
+          </script>
   </body>
 </html>
