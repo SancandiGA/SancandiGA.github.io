@@ -39,9 +39,9 @@
     </style>
 </head>
 <body>
-    <label for="numbers">Inserisci i numeri lasciando uno spazio tra loro</label>
-    <input type="text" id="numbers" name="numbers">   
     <script>
+        <input type="text" id="numbers" name="numbers">
+        var text = document.getElementById("numbers").value;
         const array = text.split(" ");
         document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
         
