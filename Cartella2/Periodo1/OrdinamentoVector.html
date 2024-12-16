@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Ordinamento di un vettore </title>
+<head>
+    <title>Ordinamento di un vettore</title>
     <link rel="icon" type="image/x-icon" href="https://static.thenounproject.com/png/17102-200.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div id= "array"> </div>
-    <div id= "array1"> </div>
-    <div id= "array2"> </div>
-    <style>
-      .button {
-        border-radius: 12px;
-        backgroud-colour: white;
-        color: black;
-        border: 2px solid #008CBA;
-      }
-      table {
-        border-spacing: 70px;
-      }
+    <div id="array"></div>
+    <div id="array1"></div>
+    <div id="array2"></div>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .button {
+            border-radius: 12px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #005f7f;
+        }
+        #array, #array1, #array2 {
+            margin: 20px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        table {
+            margin: 0 auto;
+            border-spacing: 20px;
+        }
     </style>
-  </head>
-  <body>
-    <center>
+</head>
+<body>
     <script>
         const array = [200, 100, 1, 30];
-        document.getElementById("array").innerHTML = array;
-        function decrescente(){
-          document.getElementById("array2").innerHTML = array.sort(function(a, b){return b-a});
+        document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
+        
+        function decrescente() {
+            document.getElementById("array2").innerHTML = "Array decrescente: " + array.slice().sort(function(a, b) { return b - a; }).join(", ");
         }
-        function crescente(){
-          document.getElementById("array1").innerHTML = array.sort(function(a, b){return a-b});      
-        }     
+        
+        function crescente() {
+            document.getElementById("array1").innerHTML = "Array crescente: " + array.slice().sort(function(a, b) { return a - b; }).join(", ");
+        }
     </script>
-    <table>
-      <tr> <button class="button" onclick="crescente()">Ordine crescente</button> </tr>
-      <tr> <button class="button" onclick="decrescente()">Ordine decrescente</button> </tr>
+        <table>
+        <tr>
+            <td><button class="button" onclick="crescente()">Ordine crescente</button></td>
+        </tr>
+        <tr>
+            <td><button class="button" onclick="decrescente()">Ordine decrescente</button></td>
+        </tr>
     </table>
-    </center>
-      </body>
+</body>
 </html>
