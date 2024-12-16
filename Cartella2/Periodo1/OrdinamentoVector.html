@@ -46,11 +46,11 @@
             document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
         }
         function decrescente() {
-            invio();
+            arrayDecrescente = invio();
             document.getElementById("array2").innerHTML = "Array decrescente: " + array.slice().sort(function(a, b) { return b - a; }).join(", ");
         }
         function crescente() {
-            invio();
+            arrayCrescente = invio();
             document.getElementById("array1").innerHTML = "Array crescente: " + array.slice().sort(function(a, b) { return a - b; }).join(", ");
         } 
     </script>
