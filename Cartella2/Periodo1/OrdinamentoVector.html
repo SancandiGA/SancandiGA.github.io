@@ -39,9 +39,6 @@
     </style>
 </head>
 <body>
-    <label for="numbers"> Inserisci i numeri separati da uno spazio: </label>
-    <input type="text" id="numbers" name="numbers">
-    <button onclick="invio"> enter </button>
     <script>
         function invio{
             let text = document.getElementById("numebers").value;
@@ -57,6 +54,9 @@
             document.getElementById("array1").innerHTML = "Array crescente: " + array.slice().sort(function(a, b) { return a - b; }).join(", ");
         }
     </script>
+    <label for="numbers"> Inserisci i numeri separati da uno spazio: </label>
+    <input type="text" id="numbers" name="numbers">
+    <button onclick="invio"> enter </button>
         <table>
         <tr>
             <td><button class="button" onclick="crescente()">Ordine crescente</button></td>
