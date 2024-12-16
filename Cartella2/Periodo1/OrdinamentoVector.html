@@ -43,9 +43,8 @@
         function invio() {
             let text = document.getElementById("numebers").value;
             const array = text.split(" ");
+            document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
         }
-        document.getElementById("array").innerHTML = "Array originale: " + array.join(", ");
-        
         function decrescente() {
             document.getElementById("array2").innerHTML = "Array decrescente: " + array.slice().sort(function(a, b) { return b - a; }).join(", ");
         }
