@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        function caricaFile {
+        function caricaFile() {
             let text = document.getElementById("csvFile").value;
             const array = text.split("/n").map(line => line.split(","));
             return array;
