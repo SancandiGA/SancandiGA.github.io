@@ -72,14 +72,14 @@
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i].split(",");
                 if (row.length > 1) {
-                    labels.push(row[0].trim()); // Prima colonna come etichette
-                    values.push(parseFloat(row[1].trim())); // Seconda colonna come valori
+                    labels.push(row[0].trim());
+                    values.push(parseFloat(row[1].trim()));
                 }
             }
 
             const ctx = document.getElementById('myChart').getContext('2d');
             if (chart) {
-                chart.destroy(); // Distruggi il grafico precedente se esiste
+                chart.destroy()
             }
             chart = new Chart(ctx, {
                 type: 'bar',
