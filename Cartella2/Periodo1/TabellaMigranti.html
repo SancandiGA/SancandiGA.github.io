@@ -11,6 +11,7 @@
             let text = document.getElementById("csvFile").value;
             const array = text.split("/n").map(line => line.split(","));
             return array;
+            console.log(array);
         }
     </script>
     <label for="csvFile"> Inserisci il file csv: </label>
