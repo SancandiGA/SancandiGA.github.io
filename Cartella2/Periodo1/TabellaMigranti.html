@@ -6,18 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <label for="csvFile">Inserisci il file CSV: </label>
+    <input type="file" id="csvFile" name="csvFile" accept=".csv">
+    <button onclick="caricaFile()">Carica</button>
+
+    <table id="dataTable" border="1">
+        <thead>
+            <tr id="tableHeader"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
     <script>
         function caricaFile() {
-            let text = document.getElementById("csvFile").value;
-            const array = text.split("/n");
-            console.log(array);
+            const fileInput = document.getElementById("csvFile");
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const contents = e.target.result;
+                    riempiTabella(contents);
+                };
+                reader.readAsText(file);
+            } else {
+                alert("Per favore, carica un file CSV.");
+            }
         }
-        function riempiTabella() {
-            const dati = [...caricaFile()];
+
+        function riempiTabella(data) {
+            const rows = data.split("\n");
+
+            // Popola l'intestazione della tabella
+            const headerCells = rows[0].split(",");
+            headerCells.forEach(cell => {
+                const th = document.createElement('th');
+                th.textContent = cell.trim();
+                document.getElementById('tableHeader').appendChild(th);
+            });
+
+            // Popola il corpo della tabella
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i].split(",");
+                if (row.length > 1) { // Controlla se la riga non è vuota
+                    const tr = document.createElement('tr');
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell.trim();
+                        tr.appendChild(td);
+                    });
+                    document.getElementById('tableBody').appendChild(tr);
+                }
+            }
         }
     </script>
-    <label for="csvFile"> Inserisci il file csv: </label>
-    <input type="file" id="csvFile" name="csvFile">
-    <button onclick="caricaFile()"> enter </button>
 </body>
 </html>
