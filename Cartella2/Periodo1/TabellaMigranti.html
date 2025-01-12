@@ -10,11 +10,11 @@
     <input type="file" id="csvFile" name="csvFile" accept=".csv">
     <button onclick="caricaFile()">Carica</button>
 
-    <table id="dataTable" border="1">
+    <table id="tabella" border="1">
         <thead>
-            <tr id="tableHeader"></tr>
+            <tr id="intestazioneTabella"></tr>
         </thead>
-        <tbody id="tableBody"></tbody>
+        <tbody id="corpoTabella"></tbody>
     </table>
 
     <script>
@@ -37,25 +37,23 @@
         function riempiTabella(data) {
             const rows = data.split("\n");
 
-            // Popola l'intestazione della tabella
             const headerCells = rows[0].split(",");
             headerCells.forEach(cell => {
                 const th = document.createElement('th');
                 th.textContent = cell.trim();
-                document.getElementById('tableHeader').appendChild(th);
+                document.getElementById('intestazioneTabella').appendChild(th);
             });
 
-            // Popola il corpo della tabella
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i].split(",");
-                if (row.length > 1) { // Controlla se la riga non è vuota
+                if (row.length > 1) {
                     const tr = document.createElement('tr');
                     row.forEach(cell => {
                         const td = document.createElement('td');
                         td.textContent = cell.trim();
                         tr.appendChild(td);
                     });
-                    document.getElementById('tableBody').appendChild(tr);
+                    document.getElementById('corpoTabella').appendChild(tr);
                 }
             }
         }
