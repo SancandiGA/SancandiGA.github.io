@@ -4,6 +4,7 @@
     <title>Tabella migranti</title>
     <link rel="icon" type="image/x-icon" href="https://t3.ftcdn.net/jpg/05/46/46/14/360_F_546461498_eAK0ADH2mE0Y1VNG7wpjIgtXFxT0mR0a.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <label for="csvFile">Inserisci il file CSV: </label>
@@ -17,7 +18,11 @@
         <tbody id="corpoTabella"></tbody>
     </table>
 
+    <canvas id="myChart" width="400" height="200"></canvas>
+
     <script>
+        let chart;
+
         function caricaFile() {
             const fileInput = document.getElementById("csvFile");
             const file = fileInput.files[0];
@@ -27,6 +32,7 @@
                 reader.onload = function(e) {
                     const contents = e.target.result;
                     riempiTabella(contents);
+                    creaGrafico(contents);
                 };
                 reader.readAsText(file);
             } else {
@@ -56,6 +62,45 @@
                     document.getElementById('corpoTabella').appendChild(tr);
                 }
             }
+        }
+
+        function creaGrafico(data) {
+            const rows = data.split("\n");
+            const labels = [];
+            const values = [];
+
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i].split(",");
+                if (row.length > 1) {
+                    labels.push(row[0].trim()); // Prima colonna come etichette
+                    values.push(parseFloat(row[1].trim())); // Seconda colonna come valori
+                }
+            }
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            if (chart) {
+                chart.destroy(); // Distruggi il grafico precedente se esiste
+            }
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Dati CSV',
+                        data: values,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
         }
     </script>
 </body>
