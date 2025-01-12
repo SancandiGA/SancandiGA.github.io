@@ -11,14 +11,10 @@
             let text = document.getElementById("csvFile").value;
             const array = text.split("/n").map(line => line.split(","));
             return array;
-            
         }
     </script>
     <label for="csvFile"> Inserisci il file csv: </label>
     <input type="file" id="csvFile" name="csvFile" accept=".csv">
     <button onclick="caricaFile()"> enter </button>
-    <script>
-        console.log(array);
-    </script>
 </body>
 </html>
