@@ -44,12 +44,14 @@
             const rows = data.split("\n");
 
             const headerCells = rows[0].split(",");
+            document.getElementById('intestazioneTabella').innerHTML = ''; // Clear existing headers
             headerCells.forEach(cell => {
                 const th = document.createElement('th');
                 th.textContent = cell.trim();
                 document.getElementById('intestazioneTabella').appendChild(th);
             });
 
+            document.getElementById('corpoTabella').innerHTML = ''; // Clear existing table body
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i].split(",");
                 if (row.length > 1) {
