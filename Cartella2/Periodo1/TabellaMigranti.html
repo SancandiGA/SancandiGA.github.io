@@ -127,21 +127,22 @@
             const rows = data.split("\n");
             const labels = [];
             const values = [];
-
+        
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i].split(",");
                 if (row.length > 1) {
                     labels.push(row[0].trim());
-                    values.push(parseFloat(row[1].trim()));
+                    // Rimuovi le virgolette e poi converti in numero
+                    values.push(parseFloat(row[1].trim().replace(/"/g, '')));
                 }
             }
-
+        
             const ctx = document.getElementById('myChart').getContext('2d');
             if (chart) {
                 chart.destroy();
             }
             chart = new Chart(ctx, {
-                type: 'line', // Cambia 'bar' in 'line'
+                type: 'bar',
                 data: {
                     labels: labels,
                     datasets: [{
@@ -149,8 +150,7 @@
                         data: values,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1,
-                        fill: false // Aggiungi questa riga se non vuoi riempire l'area sotto la linea
+                        borderWidth: 1
                     }]
                 },
                 options: {
