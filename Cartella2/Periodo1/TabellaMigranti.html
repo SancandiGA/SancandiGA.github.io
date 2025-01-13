@@ -132,7 +132,6 @@
                 const row = rows[i].split(",");
                 if (row.length > 1) {
                     labels.push(row[0].trim());
-                    // Rimuovi le virgolette e poi converti in numero
                     values.push(parseFloat(row[1].trim().replace(/"/g, '')));
                 }
             }
@@ -142,7 +141,7 @@
                 chart.destroy();
             }
             chart = new Chart(ctx, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     labels: labels,
                     datasets: [{
