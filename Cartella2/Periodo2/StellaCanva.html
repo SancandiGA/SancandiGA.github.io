@@ -4,20 +4,47 @@
     <title>Stella Canva</title>
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.freepik.com/512/258/258945.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+        canvas {
+            border: 2px solid #d3d3d3;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas>
-<script>
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    ctx.moveTo(200,0);
-    ctx.lineTo(400,400);
-    ctx.lineTo(0,180);
-    ctx.lineTo(400,180);
-    ctx.lineTo(0,400);
-    ctx.lineTo(200,0);
-    ctx.stroke();
-</script>
-<a href="../Periodo2/Pentamestre.html"> Clicca qui per tornare alla pagina precedente </a>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(200, 0);
+        ctx.lineTo(400, 400);
+        ctx.lineTo(0, 180);
+        ctx.lineTo(400, 180);
+        ctx.lineTo(0, 400);
+        ctx.lineTo(200, 0);
+        ctx.stroke();
+    </script>
+    <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
 </body>
 </html>
