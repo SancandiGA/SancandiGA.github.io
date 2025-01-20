@@ -30,28 +30,40 @@
         a:hover {
             color: #0056b3;
         }
+
+        div {
+            transition: transform 2s;
+        }
+
+        div:hover {
+            transform: rotate(360deg);
+        }
     </style>
 </head>
 <body>
     <h1> Stella SVG </h1>
-    <svg width="300" height="200">
-        <center>
-        <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:yellow;stroke:orange;stroke-width:5;fill-rule:evenodd;" />
-        </center>
-    </svg>
+    <div>
+        <svg width="300" height="200">
+            <center>
+            <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:yellow;stroke:orange;stroke-width:5;fill-rule:evenodd;" />
+            </center>
+        </svg>
+    </div>
     <h1> Stella Canva </h1>
-    <canvas id="myCanvas" width="400" height="400"></canvas>
-    <script>
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        ctx.moveTo(200, 0);
-        ctx.lineTo(400, 400);
-        ctx.lineTo(0, 180);
-        ctx.lineTo(400, 180);
-        ctx.lineTo(0, 400);
-        ctx.lineTo(200, 0);
-        ctx.stroke();
-    </script>
+    <div>
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(200, 0);
+            ctx.lineTo(400, 400);
+            ctx.lineTo(0, 180);
+            ctx.lineTo(400, 180);
+            ctx.lineTo(0, 400);
+            ctx.lineTo(200, 0);
+            ctx.stroke();
+        </script>
+    </div>
     <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
 </body>
 </html>
