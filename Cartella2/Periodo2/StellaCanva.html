@@ -16,7 +16,6 @@
             margin: 0;
         }
         canvas {
-            border: 2px solid #d3d3d3;
             background: none;
             border: none;
         }
@@ -28,6 +27,7 @@
             font-weight: bold;
             transition: color 0.3s;
         }
+        
         a:hover {
             color: #0056b3;
         }
@@ -39,16 +39,18 @@
         div:hover {
             transform: rotate(360deg);
         }
+
+        svg {
+            align: center;
+        }
     </style>
 </head>
 <body>
     <h1> Stella SVG </h1>
     <div>
-        <center>
-            <svg width="300" height="200">
-                <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:yellow;stroke:orange;stroke-width:5;fill-rule:evenodd;" />
-            </svg>
-        </center>
+        <svg width="300" height="200">
+            <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:yellow;stroke:orange;stroke-width:5;fill-rule:evenodd;" />
+        </svg>
     </div>
     <h1> Stella Canva </h1>
     <div>
