@@ -81,19 +81,20 @@
 
 <script>
     document.getElementById('inputForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const nome = document.getElementById('nome').value;
-        const cognome = document.getElementById('cognome').value;
-        const indirizzo = document.getElementById('indirizzo').value;
-
-        const tableBody = document.querySelector('#resultsTable tbody');
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `<td>${nome}</td><td>${cognome}</td><td>${indirizzo}</td>`;
-        tableBody.appendChild(newRow);
-
-        this.reset();
-    });
+    event.preventDefault();
+    nome = document.getElementById('nome').value;
+    cognome = document.getElementById('cognome').value;
+    indirizzo = document.getElementById('indirizzo').value;
+    table = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
+    newRow = table.insertRow();
+    cell1 = newRow.insertCell(0);
+    cell2 = newRow.insertCell(1);
+    cell3 = newRow.insertCell(2);
+    cell1.textContent = nome;
+    cell2.textContent = cognome;
+    cell3.textContent = indirizzo;
+    document.getElementById('inputForm').reset();
+});
 </script>
 
 </body>
