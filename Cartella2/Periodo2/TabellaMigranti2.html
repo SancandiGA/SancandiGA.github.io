@@ -11,6 +11,16 @@
     <input type="file" id="csvFile" name="csvFile" accept=".csv">
     <button onclick="caricaFile()">Carica</button>
     <br><br>
+    <script>
+      function caricaFile(input) {
+        let file = input.files[0];
+        let reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function() {
+        console.log(reader.result);
+        };
+      }
+    </script>
     <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
   </body>
 </html>
