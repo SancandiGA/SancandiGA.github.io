@@ -8,7 +8,7 @@
   <body>
     <h1>Tabella Migranti 2</h1>
     <label for="csvFile"> Inserisci il file CSV: </label>
-    <input type="file" id="csvFile" name="csvFile" accept=".csv">
+    <input type="file" id="csvFile" name="csvFile" accept=.csv>
     <button onclick="caricaFile()">Carica</button>
     <br><br>
     <table id="tabella">
@@ -25,6 +25,7 @@
         reader.readAsText(file);
         reader.onload = function() {
           let risultato = reader.result;
+          riempiTabella(risultato);
         };
       }
 
@@ -36,7 +37,7 @@
           const columns = element.split(",");
           columns.forEach((col) => {
             const column = document.createElement("td");
-            const text = document.createTextNode(col);
+            const text = document.createTextNode(col.replace(/"/g, ""));
             column.appendChild(text);
             row.appendChild(column);
           });
