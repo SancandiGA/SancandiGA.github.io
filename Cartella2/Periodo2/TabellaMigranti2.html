@@ -11,14 +11,35 @@
     <input type="file" id="csvFile" name="csvFile" accept=".csv">
     <button onclick="caricaFile()">Carica</button>
     <br><br>
+    <table id="tabella">
+      <thead>
+        <th> Anno </th>
+        <th> NPersone </th>
+      </thead>
     <script>
       function caricaFile(input) {
         let file = input.files[0];
         let reader = new FileReader();
         reader.readAsText(file);
         reader.onload = function() {
-        console.log(reader.result);
+          let risultato = reader.result;
+          return risultato;
         };
+      }
+      function riempiTabella() {
+        let data = caricaFile();
+        const dataSplit = data.split("\n");
+        const table = document.getElementById("tabella");
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          Object.keys(element).forEach((key) => {
+            const column = document.createElement("td");
+            const text = document.createTextNode(element[key]);
+            column.appendChild(text);
+            row.appendChild(column);
+            });
+          table.appendChild(row);
+          });
       }
     </script>
     <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
