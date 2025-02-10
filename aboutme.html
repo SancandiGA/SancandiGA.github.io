@@ -24,9 +24,24 @@ p {
 .link {
   color: white;
 }
+.hidden {
+  display: none;
+}
 </style>
+<script>
+function checkPassword() {
+  var password = prompt("Please enter the password:");
+  if (password === "Giu221063") {
+    document.getElementById("content").classList.remove("hidden");
+  } else {
+    alert("Incorrect password!");
+    window.location.href = "index.html";
+  }
+}
+</script>
 </head>
-<body style= "background-size: cover; background-image: url('https://wallpapers.com/images/featured/rose-laptop-4woyoy5pnm0hfahv.jpg')" align=center topmargin=200px>
+<body onload="checkPassword()" style="background-size: cover; background-image: url('https://wallpapers.com/images/featured/rose-laptop-4woyoy5pnm0hfahv.jpg')" align=center topmargin=200px>
+<div id="content" class="hidden">
 <table>
 <th>
 <td>
@@ -40,5 +55,6 @@ Nel mio tempo libero, mi piace dedicarmi alla scoperta di nuove conoscenze e all
 </th>
 </table>
 <p class="link"> <a href="index.html"> ◀ </a> homepage </p>
+</div>
 </body>
 </html>
