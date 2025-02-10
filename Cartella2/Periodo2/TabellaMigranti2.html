@@ -25,7 +25,6 @@
         reader.readAsText(file);
         reader.onload = function() {
           let risultato = reader.result;
-          riempiTabella(risultato);
         };
       }
 
@@ -34,7 +33,7 @@
         const tableBody = document.querySelector("#tabella tbody");
         dataSplit.forEach((element) => {
           const row = document.createElement("tr");
-          const columns = element.split(","); // Assuming CSV is comma-separated
+          const columns = element.split(",");
           columns.forEach((col) => {
             const column = document.createElement("td");
             const text = document.createTextNode(col);
