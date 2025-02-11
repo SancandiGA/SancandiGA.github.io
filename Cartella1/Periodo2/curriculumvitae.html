@@ -73,7 +73,18 @@ try{
 pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
 }catch(e){}
 </script>
-<title></title>
+<title> Curricul Vitae </title>
+ <script>
+function checkPassword() {
+  var password = prompt("Please enter the password:");
+  if (password === "Lo150407") {
+    document.getElementById("content").classList.remove("hidden");
+  } else {
+    alert("Incorrect password!");
+    window.location.href = "Pentamestre.html";
+  }
+}
+</script>
 </head>
 <body>
 <div id="sidebar">
