@@ -44,8 +44,8 @@
             const testo = document.createTextNode(col.replace(/"/g, ""));
             column.appendChild(testo);
             row.appendChild(colonna);
-            const dati1[num] = testo;
-            const dati2[num] = colonna;
+            dati1[num] = testo;
+            dati2[num] = colonna;
             num++;
           });
           tableBody.appendChild(riga);
