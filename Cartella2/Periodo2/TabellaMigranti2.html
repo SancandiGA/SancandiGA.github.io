@@ -42,8 +42,8 @@
             let num = 0;
             const colonna = document.createElement("td");
             const testo = document.createTextNode(col.replace(/"/g, ""));
-            column.appendChild(testo);
-            row.appendChild(colonna);
+            colonna.appendChild(testo);
+            riga.appendChild(colonna);
             dati1[num] = testo;
             dati2[num] = colonna;
             num++;
