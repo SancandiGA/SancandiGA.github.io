@@ -36,15 +36,16 @@
         const dataSplit = data.split("\n");
         const tableBody = document.querySelector("#tabella tbody");
         dataSplit.forEach((element) => {
+          let num = 0;
           const riga = document.createElement("tr");
           const colonne = element.split(",");
+          dati1[num] = riga;
           colonne.forEach((col) => {
             let num = 0;
             const colonna = document.createElement("td");
             const testo = document.createTextNode(col.replace(/"/g, ""));
             colonna.appendChild(testo);
             riga.appendChild(colonna);
-            dati1[num] = testo;
             dati2[num] = colonna;
             num++;
           });
