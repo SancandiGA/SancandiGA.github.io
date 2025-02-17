@@ -37,12 +37,14 @@
           const riga = document.createElement("tr");
           const colonne = element.split(",");
           colonne.forEach((col) => {
+            let num = 0;
             const colonna = document.createElement("td");
             const testo = document.createTextNode(col.replace(/"/g, ""));
             column.appendChild(testo);
             row.appendChild(colonna);
-            const dati1[col] = testo;
-            const dati2[col] = colonna;
+            const dati1[num] = testo;
+            const dati2[num] = colonna;
+            num++;
           });
           tableBody.appendChild(riga);
         });
