@@ -31,24 +31,27 @@
       }
 
       function riempiTabella(data) {
+        const dati = [];
         const dataSplit = data.split("\n");
         const tableBody = document.querySelector("#tabella tbody");
         dataSplit.forEach((element) => {
           const riga = document.createElement("tr");
           const colonne = element.split(",");
           colonne.forEach((col) => {
+            let num = 0;
             const colonna = document.createElement("td");
             const testo = document.createTextNode(col.replace(/"/g, ""));
+            dati[num] = testo;
             colonna.appendChild(testo);
             riga.appendChild(colonna);
+            num++;
           });
           tableBody.appendChild(riga);
         });
-        graficoCanva(dataSplit);
+        graficoCanva(dati);
       }
       
       function graficoCanva(data) {
-        data = document.createTextNode(col.replace(/"/g, ""));
         console.log(data);
       }
     </script>
