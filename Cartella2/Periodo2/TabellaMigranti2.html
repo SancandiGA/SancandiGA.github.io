@@ -17,6 +17,7 @@
       <tbody>
       </tbody>
     </table>
+    <div id="div"> </div>
     <canva id="canva"> </canva>
     <script>
       function caricaFile() {
@@ -56,7 +57,7 @@
       
       function graficoCanva(dati1, dati2) {
         for (let i = 0; i < dati1.lenght; i++) {
-          console.log(dati1[i]);
+          document.getElementById("div").innerHTML = dati1;
         }
         console.log(dati2);
       }
