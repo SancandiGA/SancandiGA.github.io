@@ -31,8 +31,8 @@
       }
 
       function riempiTabella(data) {
-        let dati1;
-        let dati2;
+        const dati1 = [];
+        const dati2 = [];
         const dataSplit = data.split("\n");
         const tableBody = document.querySelector("#tabella tbody");
         dataSplit.forEach((element) => {
@@ -44,8 +44,8 @@
             const testo = document.createTextNode(col.replace(/"/g, ""));
             column.appendChild(testo);
             row.appendChild(colonna);
-            let dati1[num] = testo;
-            let dati2[num] = colonna;
+            const dati1[num] = testo;
+            const dati2[num] = colonna;
             num++;
           });
           tableBody.appendChild(riga);
