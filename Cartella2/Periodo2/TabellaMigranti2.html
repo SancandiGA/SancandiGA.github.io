@@ -31,7 +31,6 @@
       }
 
       function riempiTabella(data) {
-        const dati = [];
         const dataSplit = data.split("\n");
         const tableBody = document.querySelector("#tabella tbody");
         dataSplit.forEach((element) => {
@@ -41,7 +40,6 @@
             let num = 0;
             const colonna = document.createElement("td");
             const testo = document.createTextNode(col.replace(/"/g, ""));
-            dati[num] = testo;
             colonna.appendChild(testo);
             riga.appendChild(colonna);
             num = num + 1;
