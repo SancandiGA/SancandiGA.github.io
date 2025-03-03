@@ -50,8 +50,17 @@
       }
       
       function graficoCanva(data) {
-        const data1 = document.createTextNode(data.repleace(/" /g, ""));
-        console.log(data1);
+        const vetX;
+        const vetY;
+        for ( let i = 1; i < data.length, i++) {
+          vetX[i-1].push(data[i][0]);
+          vetX[i-1] = vetX[i-1].replace(/"/g, "");
+          vetY[i-1].push(data[i][1]);
+          vetY[i-1] = vetY[i-1].replace(/"/g, "");
+        }
+        console.log(vetX);
+        console.log(vetY);
+        /*
         var c = document.getElementById("canva");
         var ctx = c.getContext("2d");
         let x = c.width;
@@ -66,6 +75,7 @@
           prima += stepX;
         }
         ctx.stroke();
+        */
       }
     </script>
     <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
