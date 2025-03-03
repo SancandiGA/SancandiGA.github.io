@@ -53,6 +53,13 @@
         data.shift();
         data.shift();
         console.log(data);
+        var c = document.getElementById("canva");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        for (let i = 0; i < data.length; i++) {
+          ctx.lineTo(data[i]);
+        }
+        ctx.stroke();
     </script>
     <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
   </body>
