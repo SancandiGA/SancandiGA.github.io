@@ -17,7 +17,7 @@
       <tbody>
       </tbody>
     </table>
-    <canva id="canva" width=auto height=auto> </canva>
+    <canvas id="canva" width=auto height=auto> </canvas>
     <script>
       function caricaFile() {
         const input = document.getElementById("csvFile");
@@ -50,11 +50,12 @@
       }
       
       function graficoCanva(data) {
-        data.shift();
-        data.shift();
         console.log(data);
-        var ctx = document.getElementById("canva");
-        for (let i = 0; i < data.length; i++) {
+        var c = document.getElementById("canva");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(0, c.height);
+        for (let i = 1; i < data.length; i++) {
           ctx.lineTo(data[i]);
         }
         ctx.stroke();
