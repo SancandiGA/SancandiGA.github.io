@@ -50,18 +50,19 @@
       }
       
       function graficoCanva(data) {
-        console.log(data);
+        const data1 = document.createTextNode(col.repleace(/" /g, ""));
+        console.log(data1);
         var c = document.getElementById("canva");
         var ctx = c.getContext("2d");
         let x = c.width;
         let y = c.height;
-        let stepX = x / data.lenght;
+        let stepX = x / data1.lenght;
         let prima = 0;
         let maxSbarchi = Math.max(...data);
         ctx.beginPath();
         ctx.moveTo(0, c.height);
-        for (let i = 1; i < data.length; i++) {
-          ctx.lineTo(prima + stepX, (y / maxSbarchi) * data[i]);
+        for (let i = 1; i < data1.length; i++) {
+          ctx.lineTo(prima + stepX, (y / maxSbarchi) * data1[i]);
           prima += stepX;
         }
         ctx.stroke();
