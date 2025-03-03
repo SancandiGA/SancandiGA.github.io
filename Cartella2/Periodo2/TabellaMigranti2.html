@@ -53,10 +53,16 @@
         console.log(data);
         var c = document.getElementById("canva");
         var ctx = c.getContext("2d");
+        let x = c.width;
+        let y = c.height;
+        let stepX = x / data.lenght;
+        let prima = 0;
+        let maxSbarchi = Math.max(...data);
         ctx.beginPath();
         ctx.moveTo(0, c.height);
         for (let i = 1; i < data.length; i++) {
-          ctx.lineTo(data[i]);
+          ctx.lineTo(prima + stepX, (y / maxSbarchi) * data[i]);
+          prima += stepX;
         }
         ctx.stroke();
       }
