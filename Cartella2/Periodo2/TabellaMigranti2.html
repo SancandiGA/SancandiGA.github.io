@@ -50,7 +50,7 @@
       }
       
       function graficoCanva(data) {
-        const data1 = document.createTextNode(col.repleace(/" /g, ""));
+        const data1 = document.createTextNode(data.repleace(/" /g, ""));
         console.log(data1);
         var c = document.getElementById("canva");
         var ctx = c.getContext("2d");
