@@ -72,63 +72,70 @@
     </table>
     <canvas id="canva" width="1000" height="600"></canvas>
     <script>
-        const anni = [];
-        const sbarchi = [];
 
-        function caricaFile() {
-            const input = document.getElementById("csvFile");
-            let file = input.files[0];
-            let reader = new FileReader();
-            reader.readAsText(file);
-            reader.onload = function() {
-                let risultato = reader.result;
-                riempiTabella(risultato);
-            };
+    const anni = [];
+    const sbarchi = [];
+
+      function caricaFile() {
+        const input = document.getElementById("csvFile");
+        let file = input.files[0];
+        let reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function() {
+          let risultato = reader.result;
+          riempiTabella(risultato);
+        };
+      }
+
+      function riempiTabella(data) {
+      
+        let Ncolonne;
+        const dataSplit = data.split("\n");
+        const tableBody = document.querySelector("#tabella tbody");
+
+        for(let i=1; i<dataSplit.length; i++){
+          
+			Ncolonne=dataSplit[i].split(","); 
+            let xValue_anni = Number(Ncolonne[0].substring(1,Ncolonne[0].length-1));
+            let xValue_sbarchi = Number(Ncolonne[1].substring(1,Ncolonne[1].length-1));
+            anni.push(xValue_anni);
+            sbarchi.push(xValue_sbarchi);
         }
 
-        function riempiTabella(data) {
-            let Ncolonne;
-            const dataSplit = data.split("\n");
-            const tableBody = document.querySelector("#tabella tbody");
-
-            for(let i=1; i<dataSplit.length; i++){
-                Ncolonne = dataSplit[i].split(","); 
-                let xValue_anni = Number(Ncolonne[0].substring(1, Ncolonne[0].length - 1));
-                let xValue_sbarchi = Number(Ncolonne[1].substring(1, Ncolonne[1].length - 1));
-                anni.push(xValue_anni);
-                sbarchi.push(xValue_sbarchi);
-            }
-
-            dataSplit.forEach((element) => {
-                const riga = document.createElement("tr");
-                const colonne = element.split(",");
-                colonne.forEach((col) => {
-                    const colonna = document.createElement("td");
-                    const testo = document.createTextNode(col.replace(/"/g, ""));
-                    colonna.appendChild(testo);
-                    riga.appendChild(colonna);
-                });
-                tableBody.appendChild(riga);
-            });
-            graficoCanva(anni, sbarchi);
+        dataSplit.forEach((element) => {
+          const riga = document.createElement("tr");
+          const colonne = element.split(",");
+          colonne.forEach((col) => {
+            let num = 0;
+            const colonna = document.createElement("td");
+            const testo = document.createTextNode(col.replace(/"/g, ""));
+            colonna.appendChild(testo);
+            riga.appendChild(colonna);
+            num = num + 1;
+          });
+          tableBody.appendChild(riga);
+        });
+        graficoCanva(anni,sbarchi);
+      }
+      
+      function graficoCanva(anni,sbarchi) { 
+     
+        var c = document.getElementById("canva");
+        var ctx = c.getContext("2d");
+        let x = c.width; 
+        let y = c.height;
+        let stepX = Math.round(x/anni.length); 
+        let prima = 0;
+        let maxSbarchi = Math.max(...sbarchi);
+        ctx.beginPath();
+        ctx.moveTo(0, c.height); 
+        for (let i = 1; i < anni.length; i++) {
+          ctx.lineTo(Math.abs(prima + stepX), y-(Math.abs((y / maxSbarchi) * sbarchi[i])));
+          prima += stepX;
         }
+        ctx.stroke();
         
-        function graficoCanva(anni, sbarchi) { 
-            var c = document.getElementById("canva");
-            var ctx = c.getContext("2d");
-            let x = c.width; 
-            let y = c.height;
-            let stepX = Math.round(x / anni.length); 
-            let prima = 0;
-            let maxSbarchi = Math.max(...sbarchi);
-            ctx.beginPath();
-            ctx.moveTo(0, c.height); 
-            for (let i = 1; i < anni.length; i++) {
-                ctx.lineTo(Math.abs(prima + stepX), y - (Math.abs((y / maxSbarchi) * sbarchi[i])));
-                prima += stepX;
-            }
-            ctx.stroke();
-        }
+      }
     </script>
     <a href="../Periodo2/Pentamestre.html">Clicca qui per tornare alla pagina precedente</a>
 </body>
