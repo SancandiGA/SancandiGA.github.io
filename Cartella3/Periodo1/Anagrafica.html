@@ -9,6 +9,20 @@
     </style>
   </head>
   <body>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText);
+          document.getElementById("demo").innerHTML = myObj.nome + " ";
+        }
+      }
+    xmlhttp.open("GET", "anag.json", true);
+    xmlhttp.send();
+  </script>
+<div id="demo"> </div>
+
+    
     <button onclick="document.location='Trimestre.html'"> torna indietro </button>
   </body>
 </html>
