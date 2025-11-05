@@ -1,0 +1,27 @@
+[
+  {
+    "nome": "Christian",
+    "cognome": "Mazzei",
+    "eta": 18
+  },
+  {
+    "nome": "Thomas",
+    "cognome": "Grassi",
+    "eta": 18
+  },
+  {
+    "nome": "Christian",
+    "cognome": "Zurzolo",
+    "eta": 17
+  },
+  {
+    "nome": "Federico",
+    "cognome": "Bellani",
+    "eta": 18
+  },
+  {
+    "nome": "Federico",
+    "cognome": "Zappa",
+    "eta": 18
+  }
+]
