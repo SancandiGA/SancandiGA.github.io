@@ -20,12 +20,16 @@
       xmlhttp.open("GET", "anag.json", true);
       xmlhttp.send();
       function stampa(lista){
-        for(let i = 0; i < lista.length; i++){
-          document.getElementById("demo").innerHTML += lista[i].nome + " " + lista[i].cognome + " " + lista[i].eta + "<br> ";
+        let tabella = "";
+        for(let i = 0; i < lista.length; i++){ 
+          tabella +=  "<tr>""td"lista[i].nome"td" + "td"lista[i].cognome"td" + "td"lista[i].eta"td" + "<tr>";
         }
+        
+        document.getElementById("demo").innerHTML = tabella;
       }
     </script>
-    <div id="demo"> </div>
+    <table id="demo"> </table>
+    //costruire una tabella html che contenga le righe con i rispettivi campi: nome, cognome, età
     <button onclick="document.location='Trimestre.html'"> torna indietro </button>
   </body>
 </html>
