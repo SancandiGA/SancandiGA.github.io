@@ -15,7 +15,6 @@
         if (this.readyState == 4 && this.status == 200) {
           var myObj = JSON.parse(this.responseText);
           stampa(myObj);
-          //document.getElementById("demo").innerHTML = myObj[0].nome + " ";
         }
       }
       xmlhttp.open("GET", "anag.json", true);
