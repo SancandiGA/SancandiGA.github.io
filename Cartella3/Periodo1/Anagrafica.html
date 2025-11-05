@@ -22,7 +22,7 @@
       xmlhttp.send();
       function stampa(lista){
         for(let i = 0; i < lista.length; i++){
-          document.getElementById("demo").innerHTML = lista[i].nome + " " + lista[i].cognome + "<br> ";
+          document.getElementById("demo").innerHTML += lista[i].nome + " " + lista[i].cognome + "<br> ";
         }
       }
     </script>
