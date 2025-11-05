@@ -21,7 +21,7 @@
       xmlhttp.open("GET", "anag.json", true);
       xmlhttp.send();
       function stampa(lista){
-        if(let i = 0; i < lista.lenght; i++){
+        for(let i = 0; i < lista.lenght; i++){
           document.getElementById("demo").innerHTML = lista[i].nome + " " + lista[i].cognome + " ";
         }
       }
