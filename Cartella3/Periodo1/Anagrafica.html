@@ -5,7 +5,6 @@
     <link rel="icon" type="image/x-icon" href="https://media.istockphoto.com/id/1249867007/vector/analytics-analysis-statistics-searching-gray-icon.jpg?s=612x612&w=0&k=20&c=Yt4RBnpog9OU1uPu9LVONX69bxsdS_HjeHNP6CnFRYs=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      
     </style>
   </head>
   <body style="background-color:powderblue;">
@@ -16,21 +15,20 @@
           var myObj = JSON.parse(this.responseText);
           stampa(myObj);
         }
-      }
+      };
       xmlhttp.open("GET", "anag.json", true);
       xmlhttp.send();
       function stampa(lista){
-        let tabella = "";
-        for(let i = 0; i < lista.length; i++){ 
-          tabella +=  "<tr>""<td>"lista[i].nome"<td>" + "<td>"lista[i].cognome"<td>" + "<td>"lista[i].eta"<td>""<tr>";
+        let tabella = "<table><tr><th>Nome</th><th>Cognome</th><th>Età</th></tr>"; // Intestazione della tabella
+        for(let i = 0; i < lista.length; i++){
+          tabella += "<tr><td>" + lista[i].nome + "</td><td>" + lista[i].cognome + "</td><td>" + lista[i].eta + "</td></tr>";
         }
-        
+        tabella += "</table>"; // Chiusura della tabella
         document.getElementById("demo").innerHTML = tabella;
       }
     </script>
-    <table id="demo"> 
-    </table>
-    <button onclick="document.location='Trimestre.html'"> torna indietro </button>
+    <div id="demo"> 
+    </div>
+    <button onclick="document.location='Trimestre.html'"> Torna indietro </button>
   </body>
 </html>
-
