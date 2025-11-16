@@ -1,1 +1,33 @@
+<persone>
+  <persona>
+    <nome>Christian</nome>
+    <cognome>Mazzei</cognome>
+    <eta>18</eta>
+  </persona>
+  <persona>
+    <nome>Thomas</nome>
+    <cognome>Grassi</cognome>
+    <eta>18</eta>
+  </persona>
+  <persona>
+    <nome>Christian</nome>
+    <cognome>Zurzolo</cognome>
+    <eta>17</eta>
+  </persona>
+  <persona>
+    <nome>Federico</nome>
+    <cognome>Bellani</cognome>
+    <eta>18</eta>
+  </persona>
+  <persona>
+    <nome>Federico</nome>
+    <cognome>Zappa</cognome>
+    <eta>18</eta>
+  </persona>
+  <persona>
+    <nome>Giulia Alesia</nome>
+    <cognome>Sancandi</cognome>
+    <eta>18</eta>
+  </persona>
+</persone>
 
