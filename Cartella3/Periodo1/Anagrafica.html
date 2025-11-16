@@ -5,19 +5,50 @@
     <link rel="icon" type="image/x-icon" href="https://media.istockphoto.com/id/1249867007/vector/analytics-analysis-statistics-searching-gray-icon.jpg?s=612x612&w=0&k=20&c=Yt4RBnpog9OU1uPu9LVONX69bxsdS_HjeHNP6CnFRYs=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      tr, td {
-        border: 1px solid black;
+      body {
+        font-family: Arial, sans-serif; /* Cambia il font */
+        background-color: #f0f8ff; /* Light blue background */
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        padding: 20px 0;
+      }
+      #demo {
+        padding: 20px;
       }
       table {
-        width: 100%; /* La tabella occuperà tutta la larghezza disponibile */
-        border-collapse: collapse; /* Rimuove lo spazio tra i bordi delle celle */
+        width: 80%; /* Riduce la larghezza della tabella */
+        margin: 20px auto; /* Centra la tabella */
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
       }
       th, td {
-        padding: 8px; /* Aggiunge un po' di spazio interno alle celle */
-        text-align: left; /* Allinea il testo a sinistra */
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
       }
       th {
-        background-color: #f2f2f2; /* Colore di sfondo per le intestazioni */
+        background-color: #4CAF50; /* Verde per le intestazioni */
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto; /* Centra il pulsante */
+      }
+      button:hover {
+        background-color: #3e8e41;
       }
     </style>
   </head>
