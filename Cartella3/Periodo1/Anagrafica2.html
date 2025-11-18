@@ -8,9 +8,6 @@
       table {
         text-align: center;
       }
-      body {
-        align: center;
-      }
     </style>
   </head>
   <body onload="loadDoc()">
@@ -27,11 +24,20 @@
       }
       function myFunction(xml) {
         var i;
+        var maggiorenne;
         var xmlDoc = xml.responseXML;
-        var table="<table><tr><th>Nome</th><th>Cognome</th><th>Età</th></tr></table>";
+        var table="<table><tr><th>Nome</th><th>Cognome</th><th>Età</th><th>Maggiorenne</th></tr></table>";
         var x = xmlDoc.getElementsByTagName("persona");
         for (i = 0; i <x.length; i++) {
-          table += "<tr><td>" + x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue + " " + "</td><td>" + x[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue + " " + "</td><td>" + x[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue + " " + "</td></tr>";
+          if (x.[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue > 18) {
+            maggiorenne = "si";
+          } else {
+            maggiorenne = "no";
+          }
+          table += "<tr><td>" + x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue + " " + "</td><td>" 
+                + x[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue + " " + "</td><td>" 
+                + x[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue + " " + "</td><td>" 
+                + maggiorenne + "</td></tr>";
         }
         document.getElementById("demo").innerHTML = table;
       }
