@@ -30,7 +30,7 @@
         var table="<table><tr><th>Nome</th><th>Cognome</th><th>Età</th><th>Maggiorenne</th></tr></table>";
         var x = xmlDoc.getElementsByTagName("persona");
         for (i = 0; i <x.length; i++) {
-          if (x.[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue >= 18) {
+          if (x[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue >= 18) {
             maggiorenne = 'si';
           } else {
             maggiorenne = 'no';
