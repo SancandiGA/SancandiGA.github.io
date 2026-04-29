@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Home page Sancandi </title>
-<link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/010/151/174/non_2x/house-and-home-icon-symbol-sign-free-png.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-table {
-    position: left;
-    top: 1px;
-    }
-center {
-    position: relative;
-    top: 175px;
-.button {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #000;
-    background-color: #d3d3d3;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 9px #999;
-}
-.button:hover {background-color: #faebd7}
+    <title> Home page Sancandi </title>
+    <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/010/151/174/non_2x/house-and-home-icon-symbol-sign-free-png.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('Firefly.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            font-family: sans-serif;
+        }
 
-.button:active {
-  background-color: #E6E6E6;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-</style>
+        .top-left-menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #000;
+            background-color: #d3d3d3;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 9px #999;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #faebd7;
+        }
+
+        .button:active {
+            background-color: #E6E6E6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+    </style>
 </head>
 
-<body style= "background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('Firefly.png')" align=center>
-<table>
-<tr>
-<td>
-<a href="aboutme.html">
-  <img src="https://static.thenounproject.com/png/5018305-200.png" alt="About me" height=40 width=40 />
-</a>
-</td>
-</tr>
-</table>
-<center>
-<i> <h1> Sito creato da: Giulia Alesia Sancandi </h1> </i>
-<h1> Benvenuto nella home page </h1>
-<h2> Seleziona la classe: </h2>
-<br>
-<button class="button" onclick="document.location='../Cartella1/Pagina1.html'"> Classe 3^ </button>
-<button class="button" onclick="document.location='../Cartella2/Pagina2.html'"> Classe 4^ </button>
-<button class="button" onclick="document.location='../Cartella3/Pagina3.html'"> Classe 5^ </button>
-<br> <br> <br>
-</center>
+<body>
+
+    <div class="top-left-menu">
+        <a href="aboutme.html">
+            <img src="https://static.thenounproject.com/png/5018305-200.png" alt="About me" height="40" width="40" />
+        </a>
+    </div>
+
+    <i><h1>Sito creato da: Giulia Alesia Sancandi</h1></i>
+    <h1>Benvenuto nella home page</h1>
+    <h2>Seleziona la classe:</h2>
+    
+    <div>
+        <button class="button" onclick="document.location='../Cartella1/Pagina1.html'"> Classe 3^ </button>
+        <button class="button" onclick="document.location='../Cartella2/Pagina2.html'"> Classe 4^ </button>
+        <button class="button" onclick="document.location='../Cartella3/Pagina3.html'"> Classe 5^ </button>
+    </div>
+
 </body>
 </html>
